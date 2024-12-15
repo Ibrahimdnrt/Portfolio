@@ -31,11 +31,17 @@
         <div id="main-logo">
             <img src="/assets/logo.png" alt="logo">
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+
+        <section id="intro">
+            <h2>Welkom op mijn website!</h2>
+            <p>Hallo allemaal! Ik ben <strong>Danirt Ibrahim</</strong>, een student van het eerste jaar Systeem en Netwerkbeheer (SNB) aan de AP Hogeschool. Met trots wil ik jullie mijn zelfgemaakte website laten zien, waar ik de vaardigheden en kennis die ik dit jaar heb opgedaan, toepas. Deze website biedt een overzicht van de projecten die ik heb gemaakt, evenals mijn ervaring in netwerkbeheer, serverconfiguratie en meer.</p>
+            
+            <p>Naast mijn portfolio en projectpagina kun je hier ook meer leren over mijn werk, de tools die ik gebruik, en mijn toekomstige doelen als netwerkbeheerder. Bekijk zeker de verschillende secties van de site om meer te ontdekken!</p>
+        </section>
     </main>
     
     <footer>
-        <p>&copy; 2024 Project Systeem en Netwerkbeheer</p>
+        <p>&copy; 2024 Danirt Ibrahim - Project Systeem en Netwerkbeheer</p>
     </footer>
 
     <script>
@@ -43,20 +49,20 @@
         const bodyClassList = document.body.classList;
         const theme = localStorage.getItem('theme');
 
-        // Als de opgeslagen voorkeur 'dark' is, zet de body in dark mode
+     
         if (theme === 'dark') {
             bodyClassList.add('dark-mode');
-            themeSwitch.checked = true; // Zet de toggle aan
+            themeSwitch.checked = true;
         } else {
             bodyClassList.remove('dark-mode');
-            themeSwitch.checked = false; // Zet de toggle uit
+            themeSwitch.checked = false;
         }
 
-        // Voeg event listener toe om dark/light mode te wisselen
+        
         themeSwitch.addEventListener('change', () => {
             bodyClassList.toggle('dark-mode');
             const newTheme = bodyClassList.contains('dark-mode') ? 'dark' : 'light';
-            localStorage.setItem('theme', newTheme); // Sla de voorkeur van de gebruiker op
+            localStorage.setItem('theme', newTheme); 
         });
     </script>
 
