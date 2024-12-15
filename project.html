@@ -30,36 +30,36 @@
 
     <div class="content">
         <section id="intro">
-            <h2>Introductie</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non urna nec odio faucibus auctor. Sed volutpat, lorem ut aliquam ullamcorper, nunc ante fringilla odio, eu facilisis odio dui eu augue. Proin ac risus lectus. Suspendisse potenti. Cras sagittis sollicitudin magna, sit amet tincidunt nunc vehicula et. Fusce aliquet dolor in sem luctus laoreet. Integer ac maximus arcu. Ut euismod malesuada mi, at consectetur tortor feugiat nec.</p>
+            <h2>projecten</h2>
+            <p>Hier leg ik kort uit wat ik heb geleerd en gedaan bij elk van de projecten.</p>
         </section>
 
         <section id="presentatie">
             <h2>Presentatie</h2>
-            Hier leg ik kort uit informatie over onze projecten
-
-            <h3>1. UTP kabel Aansluiten</h3>
-            <p>Beschrijving: Leer stap voor stap hoe je een UTP-kabel correct aansluit, inclusief het krimpen van de RJ45-connectoren. Dit project is essentieel voor het opzetten van betrouwbare netwerkverbindingen.</p>
-
-            <h4>2. HYPER-V server configureren</h4>
-            <p>Beschrijving: Zet een virtuele infrastructuur op om meerdere virtuele machines (VM's) te creëren op één fysieke server. Dit helpt bij het optimaliseren van serverresources en verhoogt de flexibiliteit van je IT-omgeving.</p>
-
-            <h4>3. Linux server configureren</h4>
-            <p>Beschrijving: Leer de basisprincipes van het configureren van een Linux-server, inclusief het instellen van gebruikers, rechten en services. Dit project helpt bij het opzetten van een robuuste en veilige serveromgeving.</p>
-
-            <h4>4. Windows server beheer</h4>
-            <p>Beschrijving: Beheers de dagelijkse beheeractiviteiten van een Windows-server, zoals het opzetten van Active Directory, het beheren van gebruikersaccounts en het configureren van netwerkvoorzieningen.</p>
-
+            Hier leg ik kort uit wat ik heb geleerd en gedaan bij elk van de projecten.
+            
+            <h3>1. UTP Kabel Aansluiten</h3>
+            <p>Bij dit project moest ik zelf een UTP-kabel in elkaar steken. Ik leerde hoe ik de kabel correct moest strippen, de draadjes op de juiste manier moest ordenen en de RJ45-connectoren moest krimpen. Het was een praktisch proces waarbij ik alles zelf moest doen, van het strippen tot het aansluiten van de kabels, wat essentieel is voor het opzetten van betrouwbare netwerkverbindingen.</p>
+            
+            <h4>2. HYPER-V Server Configureren</h4>
+            <p>In dit project leerde ik hoe ik een Hyper-V-server moest configureren, inclusief het toevoegen van virtuele LAN- en WLAN-netwerken en netwerkkaarten. Ik moest een virtuele infrastructuur opzetten om meerdere virtuele machines (VM's) te creëren op één fysieke server. Dit hielp me bij het begrijpen van het optimaliseren van serverresources en het verhogen van de flexibiliteit van een IT-omgeving.</p>
+            
+            <h4>3. Linux Server Configureren</h4>
+            <p>Voor de Linux server leerde ik hoe ik SSH-keys moest configureren zodat ik zonder telkens een wachtwoord in te voeren kon inloggen. Ik heb de basisprincipes van het configureren van een Linux-server geleerd, zoals het instellen van gebruikers, rechten en services. Dit project hielp me bij het opzetten van een robuuste en veilige serveromgeving.</p>
+            
+            <h4>4. Windows Server Beheer</h4>
+            <p>Bij dit project leerde ik hoe ik een Windows-server moest beheren. Ik leerde alles over gebruikersrechten, hoe ik gebruikersaccounts moest aanmaken en hoe ik de rechten van gebruikers kon bepalen. Dit gaf me een goed begrip van het beheren van Windows-serveromgevingen en het configureren van netwerkvoorzieningen.</p>
+            
             <h4>5. Wireshark</h4>
-            <p>Beschrijving: Gebruik Wireshark om netwerkverkeer te monitoren en te analyseren. Dit project helpt bij het identificeren van netwerkproblemen en het optimaliseren van netwerkprestaties door inzicht in pakketstromen te krijgen.</p>
-
-            <h4>6. Packet tracer</h4>
-            <p>Beschrijving: Maak gebruik van Cisco Packet Tracer om een virtuele netwerkomgeving te ontwerpen en te simuleren. Leer hoe je verschillende netwerkonderdelen configureert en test om solide netwerktopologieën op te bouwen.</p>
-        </section>
+            <p>Met Wireshark heb ik gewerkt aan een grote opdracht waarin ik netwerkpakketten moest monitoren die binnenkomen en naar buiten gaan. Ik heb leren analyseren wat er precies door het netwerk beweegt en dit heeft me geholpen bij het identificeren van netwerkproblemen en het verbeteren van de netwerkprestaties door inzicht te krijgen in de pakketstromen.</p>
+            
+            <h4>6. Packet Tracer</h4>
+            <p>Bij Packet Tracer heb ik aan een grote opdracht gewerkt waarbij we alles zelf moesten plaatsen in een groot gebouw. Dit project omvatte het plaatsen van racks, routers en alles wat nodig was om een netwerk in een echte werkomgeving op te zetten. Ik leerde alles over het ontwerpen van netwerkomgevingen en hoe verschillende netwerkonderdelen correct moesten worden geconfigureerd en getest om een solide netwerktopologie te creëren.</p>
+            
     </div>
 
     <footer>
-        <p>&copy; 2024 Project Systeem en Netwerkbeheer</p>
+        <p>&copy; 2024 Danirt Ibrahim</p>
     </footer>
 
     <script>
@@ -67,20 +67,20 @@
         const bodyClassList = document.body.classList;
         const theme = localStorage.getItem('theme');
 
-        // Als de opgeslagen voorkeur 'dark' is, zet de body in dark mode
+        
         if (theme === 'dark') {
             bodyClassList.add('dark-mode');
-            themeSwitch.checked = true; // Zet de toggle aan
+            themeSwitch.checked = true; 
         } else {
             bodyClassList.remove('dark-mode');
-            themeSwitch.checked = false; // Zet de toggle uit
+            themeSwitch.checked = false; 
         }
 
-        // Voeg event listener toe om dark/light mode te wisselen
+        
         themeSwitch.addEventListener('change', () => {
             bodyClassList.toggle('dark-mode');
             const newTheme = bodyClassList.contains('dark-mode') ? 'dark' : 'light';
-            localStorage.setItem('theme', newTheme); // Sla de voorkeur van de gebruiker op
+            localStorage.setItem('theme', newTheme); 
         });
     </script>
 
