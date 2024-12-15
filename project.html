@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Systeem en Netwerkbeheer</title>
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <a href="/" class="nav-link home-link">
+                <img src="/assets/logo.png" alt="Logo" id="logo">
+            </a>
+            <a href="/index.html" class="home-button">Home</a>
+        </div>
+        <nav class="nav-right">
+            <a href="/portfolio.html">Portfolio</a>
+            <a href="/project.html">Project</a>
+            <a href="/contact.html">Contact</a>
+            <div class="toggle-switch">
+                <input type="checkbox" id="theme-switch">
+                <label class="slider" for="theme-switch"></label>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+        <section id="intro">
+            <h2>Introductie</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non urna nec odio faucibus auctor. Sed volutpat, lorem ut aliquam ullamcorper, nunc ante fringilla odio, eu facilisis odio dui eu augue. Proin ac risus lectus. Suspendisse potenti. Cras sagittis sollicitudin magna, sit amet tincidunt nunc vehicula et. Fusce aliquet dolor in sem luctus laoreet. Integer ac maximus arcu. Ut euismod malesuada mi, at consectetur tortor feugiat nec.</p>
+        </section>
+
+        <section id="presentatie">
+            <h2>Presentatie</h2>
+            Hier leg ik kort uit informatie over onze projecten
+
+            <h3>1. UTP kabel Aansluiten</h3>
+            <p>Beschrijving: Leer stap voor stap hoe je een UTP-kabel correct aansluit, inclusief het krimpen van de RJ45-connectoren. Dit project is essentieel voor het opzetten van betrouwbare netwerkverbindingen.</p>
+
+            <h4>2. HYPER-V server configureren</h4>
+            <p>Beschrijving: Zet een virtuele infrastructuur op om meerdere virtuele machines (VM's) te creëren op één fysieke server. Dit helpt bij het optimaliseren van serverresources en verhoogt de flexibiliteit van je IT-omgeving.</p>
+
+            <h4>3. Linux server configureren</h4>
+            <p>Beschrijving: Leer de basisprincipes van het configureren van een Linux-server, inclusief het instellen van gebruikers, rechten en services. Dit project helpt bij het opzetten van een robuuste en veilige serveromgeving.</p>
+
+            <h4>4. Windows server beheer</h4>
+            <p>Beschrijving: Beheers de dagelijkse beheeractiviteiten van een Windows-server, zoals het opzetten van Active Directory, het beheren van gebruikersaccounts en het configureren van netwerkvoorzieningen.</p>
+
+            <h4>5. Wireshark</h4>
+            <p>Beschrijving: Gebruik Wireshark om netwerkverkeer te monitoren en te analyseren. Dit project helpt bij het identificeren van netwerkproblemen en het optimaliseren van netwerkprestaties door inzicht in pakketstromen te krijgen.</p>
+
+            <h4>6. Packet tracer</h4>
+            <p>Beschrijving: Maak gebruik van Cisco Packet Tracer om een virtuele netwerkomgeving te ontwerpen en te simuleren. Leer hoe je verschillende netwerkonderdelen configureert en test om solide netwerktopologieën op te bouwen.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Project Systeem en Netwerkbeheer</p>
+    </footer>
+
+    <script>
+        const themeSwitch = document.getElementById('theme-switch');
+        const bodyClassList = document.body.classList;
+        const theme = localStorage.getItem('theme');
+
+        // Als de opgeslagen voorkeur 'dark' is, zet de body in dark mode
+        if (theme === 'dark') {
+            bodyClassList.add('dark-mode');
+            themeSwitch.checked = true; // Zet de toggle aan
+        } else {
+            bodyClassList.remove('dark-mode');
+            themeSwitch.checked = false; // Zet de toggle uit
+        }
+
+        // Voeg event listener toe om dark/light mode te wisselen
+        themeSwitch.addEventListener('change', () => {
+            bodyClassList.toggle('dark-mode');
+            const newTheme = bodyClassList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme); // Sla de voorkeur van de gebruiker op
+        });
+    </script>
+
+</body>
+</html>

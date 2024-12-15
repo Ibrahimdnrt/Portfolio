@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <a href="/index.html" class="home-link">
+                <img src="/assets/logo.png" alt="Logo" id="logo">
+            </a>
+            <a href="/index.html" class="home-button">Home</a>
+        </div>
+        <nav class="nav-right">
+            <a class="nav-link" href="/portfolio.html">Portfolio</a>
+            <a class="nav-link" href="/project.html">Project</a>
+            <a class="nav-link" href="/contact.html">Contact</a>
+            <div class="toggle-switch">
+                <input type="checkbox" id="theme-switch">
+                <label class="slider" for="theme-switch"></label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="main-logo">
+            <img src="/assets/logo.png" alt="logo">
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Project Systeem en Netwerkbeheer</p>
+    </footer>
+
+    <script>
+        const themeSwitch = document.getElementById('theme-switch');
+        const bodyClassList = document.body.classList;
+        const theme = localStorage.getItem('theme');
+
+        // Als de opgeslagen voorkeur 'dark' is, zet de body in dark mode
+        if (theme === 'dark') {
+            bodyClassList.add('dark-mode');
+            themeSwitch.checked = true; // Zet de toggle aan
+        } else {
+            bodyClassList.remove('dark-mode');
+            themeSwitch.checked = false; // Zet de toggle uit
+        }
+
+        // Voeg event listener toe om dark/light mode te wisselen
+        themeSwitch.addEventListener('change', () => {
+            bodyClassList.toggle('dark-mode');
+            const newTheme = bodyClassList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme); // Sla de voorkeur van de gebruiker op
+        });
+    </script>
+
+</body>
+</html>

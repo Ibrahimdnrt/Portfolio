@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Portfolio Website</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <a href="/" class="nav-link home-link">
+                <img src="/assets/logo.png" alt="Logo" id="logo">
+            </a>
+            <a href="/index.html" class="home-button">Home</a>
+        </div>
+        <nav class="nav-right">
+            <a href="/portfolio.html">Portfolio</a>
+            <a href="/project.html">Project</a>
+            <a href="/contact.html">Contact</a>
+            <div class="toggle-switch">
+                <input type="checkbox" id="theme-switch">
+                <label class="slider" for="theme-switch"></label>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welkom op mijn website</h1>
+        <p>Hier zijn enkele projecten waar ik dit jaar heb mee gewerkt en of toegepast in de praktijk.</p>
+    </section>
+
+    <section id="projecten">    
+        <div class="project-item">
+            <h3>Project 1: UTP kabel Aansluiten</h3> 
+            <img src="/assets/utp-kabel-in-connector.jpg" alt="project 1">
+        </div>
+        <div class="project-item">
+            <h3>Project 2: HYPER-V server configureren.</h3> 
+            <img src="/assets/hyperv.png" alt="project 2">
+        </div>
+        <div class="project-item">
+            <h3>Project 3: Linux server configureren.</h3> 
+            <img src="/assets/linuxserver.png" alt="project 3">
+        </div>
+        <div class="project-item">
+            <h3>Project 4: Windows server beheer.</h3> 
+            <img src="/assets/serverbeheer01a.png" alt="project 4">
+        </div>
+        <div class="project-item">
+            <h3>Project 5: Wireshark</h3> 
+            <img src="/assets/wireshark.png" alt="project 5">
+        </div>
+        <div class="project-item">
+            <h3>Project 6: Packet tracer</h3> 
+            <img src="/assets/packettracer.png" alt="project 6">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Project Systeem en Netwerkbeheer</p>
+    </footer>
+
+    <script>
+        const themeSwitch = document.getElementById('theme-switch');
+        const bodyClassList = document.body.classList;
+        const theme = localStorage.getItem('theme');
+
+        if (theme === 'dark') {
+            bodyClassList.add('dark-mode');
+            themeSwitch.checked = true;
+        }
+
+        themeSwitch.addEventListener('change', () => {
+            bodyClassList.toggle('dark-mode');
+            const newTheme = bodyClassList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+
+</body>
+</html>

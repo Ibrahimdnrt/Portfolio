@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App - Contact</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Voeg Leaflet CSS toe -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body class="dark-mode">
+    <header>
+        <div class="header-left">
+            <a href="/" class="nav-link home-link">
+                <img src="/assets/logo.png" alt="Logo" id="logo">
+            </a>
+            <a href="/index.html" class="home-button">Home</a>
+        </div>
+        <nav class="nav-right">
+            <a class="nav-link" href="/portfolio.html">Portfolio</a>
+            <a class="nav-link" href="/project.html">Projects</a>
+            <a class="nav-link" href="/contact.html">Contact</a>
+            <div class="toggle-switch">
+                <input type="checkbox" id="theme-switch">
+                <label class="slider" for="theme-switch"></label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Contacteer de eigenaar van de website.</h2>
+            <img src="/assets/mezelf.png" alt="Envelope Icon" aria-hidden="true">
+            <address class="contact-info">
+                <div>E-mail: <a href="mailto:contact@example.com">Ibrahimeren.2660@gmail.com</a></div>
+                <div>Telefoon nr: <a href="tel:+31123456789">+32 4 84 12 31 62</a></div>
+            </address>
+
+            <h3>Bekijk mijn locatie</h3>
+            <!-- Voeg hier de Leaflet-kaart toe -->
+            <div id="mapid"></div>
+
+            <!-- Contact Form -->
+            <form action="submit_form.php" method="POST" id="contact-form">
+                <h3>Of stuur ons een bericht</h3>
+
+                <label for="name">Naam:</label>
+                <input type="text" id="name" name="name" placeholder="Je naam" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Je e-mail" required>
+
+                <label for="subject">Onderwerp:</label>
+                <input type="text" id="subject" name="subject" placeholder="Onderwerp" required>
+
+                <label for="message">Bericht:</label>
+                <textarea id="message" name="message" placeholder="Je bericht" required></textarea>
+
+                <button type="submit">Verstuur bericht</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const themeSwitch = document.getElementById('theme-switch');
+        const bodyClassList = document.body.classList;
+        const theme = localStorage.getItem('theme');
+
+        // Als de opgeslagen voorkeur 'dark' is, zet de body in dark mode
+        if (theme === 'dark') {
+            bodyClassList.add('dark-mode');
+            themeSwitch.checked = true; // Zet de toggle aan
+        } else {
+            bodyClassList.remove('dark-mode');
+            themeSwitch.checked = false; // Zet de toggle uit
+        }
+
+        // Voeg event listener toe om dark/light mode te wisselen
+        themeSwitch.addEventListener('change', () => {
+            bodyClassList.toggle('dark-mode');
+            const newTheme = bodyClassList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme); // Sla de voorkeur van de gebruiker op
+        });
+    </script>
+
+    <!-- Voeg de Leaflet JS toe voor de kaartfunctionaliteit -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        // Initialiseer de Leaflet kaart
+        var map = L.map('mapid').setView([51.214, 4.4636], 13);  // Coördinaten van Borsbeek, Antwerpen
+
+        // Voeg een OpenStreetMap laag toe
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Voeg een marker toe aan de kaart
+        L.marker([51.214, 4.4636]).addTo(map)
+            .bindPopup('Deurne, Antwerpen')
+            .openPopup();
+    </script>
+
+</body>
+
+</html>
